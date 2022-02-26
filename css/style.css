@@ -30,11 +30,10 @@ main {
 
 #logo-container {
     display: inline-block;
-    padding-top: 10px;
     position: relative;
     top: 20px;
     background: #47a0ce;
-    padding: 10px
+    padding: 10px 26px;
 }
 
 #logo-container h2 {
@@ -60,12 +59,14 @@ main {
 }
 
 .callout {
-    border: 5px dotted #47a0ce;
+    border: 2px solid #47a0ce;
     text-align: center;
     margin: 0 30px;
+    padding: 20px 0;
 }
 
 footer p {
     text-align: center;
-    padding: 20px;
+    padding: 24px;
+    font-size: 14px;
 }
