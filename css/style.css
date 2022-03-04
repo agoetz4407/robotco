@@ -1,3 +1,10 @@
+:root {
+    --brandPrimary: #47a0ce;
+    --lightgreen: #47ce86;
+    --darkgreen: #32b46f;
+    --border: 6px solid var(--brandPrimary);
+}
+
 * {
     font-family:'Courier New', Courier, monospace;
 }
@@ -9,7 +16,7 @@ html, body {
 }
 
 header {
-    background: #47a0ce;
+    background: var(--brandPrimary);
     text-align: center;
     display: flex;
     justify-content: space-between;
@@ -37,7 +44,7 @@ main {
     display: inline-block;
     position: relative;
     top: 20px;
-    background: #47a0ce;
+    background: var(--brandPrimary);
     padding: 10px 26px;
 }
 
@@ -47,11 +54,11 @@ main {
 
 .bg-dark {
     background: black;
-    color: #47a0ce;
+    color: var(--brandPrimary);
 }
 
 .bg-dark a {
-    color: #47a0ce;
+    color: var(--brandPrimary);
 }
 
 #hero {
@@ -61,10 +68,23 @@ main {
     text-align: center;
     padding: 60px 15px;
     font-size: 42px;
+    border-bottom: var(--border);
+}
+
+.btn {
+    background-color: var(--lightgreen);
+    text-decoration: none;
+    padding: 10px 25px;
+    font-weight: bold;
+    color: black;
+}
+
+.btn:hover {
+    background: var(--darkgreen);
 }
 
 .callout {
-    border: 2px solid #47a0ce;
+    border: 2px solid var(--brandPrimary);
     text-align: center;
     margin: 0 30px;
     padding: 20px 0;
@@ -87,7 +107,36 @@ main {
     justify-content: center;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    border: var(--border);
+    position: relative;
   }
+
+.gallery-item:hover {
+      background-color: var(--lightgreen);
+      border-color: white;
+  }
+
+.gallery-item:hover .on-sale {
+    background-color: white;
+}
+
+.gallery-item:hover i {
+    transform: scale(1.25);
+}
+
+.on-sale {
+    background-color: var(--lightgreen);
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.gallery-item p {
+    margin-top: 0;
+}
 
 footer {
     display: flex;
@@ -95,6 +144,7 @@ footer {
     align-items: center;
     padding: 0 15px;
     font-size: 14px;
+    border-top: var(--border)
 }
 
 footer h3 {
@@ -103,4 +153,29 @@ footer h3 {
 
 footer i {
     color:white;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    header {
+        flex-direction: column; 
+        align-items: stretch;  
+    }
+    nav {
+        background-color: black;
+    }
+    nav a {
+        color: var(--brandPrimary);
+        margin: 0 10px;
+    }
+    main {
+        flex-direction: column;
+    }
+    .callout {
+        margin-bottom: 20px;
+    }
+    footer {
+        flex-direction: column;
+        padding-bottom: 15px;
+    }
 }
